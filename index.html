@@ -1,17 +1,3 @@
-<!--
-Template: Compositionality and Reasoning in AI and Cognitive Science
-Usage notes:
- - This single-file template contains HTML + embedded CSS for a simple, responsive static site.
- - Replace the header image at "images/header.jpg" with your chosen top photo.
- - Update the text content below (speakers, schedule, registration link, contact email).
- - Files to create in your repo:
-     - index.html   (this file)
-     - images/header.jpg   (your top image)
- - To preview locally: run `python3 -m http.server 8000` in the repo root and open http://localhost:8000
- - To share temporarily: use ngrok: `ngrok http 8000`
- - When ready to publish on GitHub Pages: push to a branch you choose and enable Pages in Settings → Pages (see README/Docs).
--->
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,12 +6,12 @@ Usage notes:
   <title>Compositionality and Reasoning in AI and Cognitive Science — Workshop</title>
   <meta name="description" content="One-day workshop on Compositionality and Reasoning in AI and Cognitive Science — January 8, 2026 — Warsaw">
 
-  <!-- Google fonts (optional) -->
+  <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --accent:#0b63d4; /* blue */
+      --accent:#0b63d4;
       --bg:#f7f9fc;
       --text:#17202a;
       --muted:#51657a;
@@ -37,32 +23,98 @@ Usage notes:
 
     .container{max-width:var(--max-width);margin:0 auto;padding:28px}
 
-    /* Hero */
-    .hero{position:relative;height:320px;display:flex;align-items:flex-end;border-radius:8px;overflow:hidden;background:#222}
-    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(0.95)}
-    .hero-overlay{position:relative;background:linear-gradient(180deg,rgba(0,0,0,0.10),rgba(0,0,0,0.45));padding:28px;color:white;width:100%}
-    .site-title{margin:0;font-size:clamp(20px,3.2vw,36px);line-height:1.05}
-    .site-sub{margin-top:6px;color:rgba(255,255,255,0.9);font-weight:400}
-
     /* Navigation */
-    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
-    .nav-links{display:flex;gap:14px}
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 0;
+      background:white;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      border-bottom:1px solid #ddd;
+    }
+    .nav-links{display:flex;gap:14px;flex-wrap:wrap}
+
+    /* Hero */
+    .hero{
+      position:relative;
+      height:320px;
+      display:flex;
+      align-items:flex-end;
+      border-radius:8px;
+      overflow:hidden;
+      background:#222;
+      margin-bottom:24px;
+    }
+    .hero img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:contrast(1.05) saturate(0.95);
+    }
+    .hero-overlay{
+      position:relative;
+      background:linear-gradient(180deg,rgba(0,0,0,0.10),rgba(0,0,0,0.45));
+      padding:28px;
+      color:white;
+      width:100%;
+    }
+    .site-title{
+      margin:0;
+      font-size:clamp(20px,3.2vw,36px);
+      line-height:1.05;
+    }
+    .site-sub{
+      margin-top:6px;
+      color:rgba(255,255,255,0.9);
+      font-weight:400;
+    }
 
     /* Sections */
-    section{background:white;margin-top:18px;padding:22px;border-radius:8px;box-shadow:0 6px 18px rgba(19,30,43,0.04)}
+    section{
+      background:white;
+      margin-top:18px;
+      padding:28px;
+      border-radius:8px;
+      box-shadow:0 6px 18px rgba(19,30,43,0.04);
+    }
     h2{margin-top:0}
     .muted{color:var(--muted)}
-    .button{display:inline-block;background:var(--accent);color:white;padding:10px 16px;border-radius:6px;font-weight:600}
-
-    /* Grid for two-column parts */
-    .grid{display:grid;grid-template-columns:1fr;gap:18px}
-    @media(min-width:780px){.grid{grid-template-columns:1fr 320px}}
-
-    footer{margin-top:18px;text-align:center;padding:18px;color:var(--muted);font-size:13px}
-
-    /* small utility */
     ul{padding-left:1.1em}
     .speaker{margin-bottom:10px}
+
+    footer{
+      margin-top:18px;
+      text-align:center;
+      padding:18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    :root{
+      --accent:#0b63d4;
+      --bg:#f7f9fc;
+      --text:#17202a;
+      --muted:#51657a;
+      --max-width:980px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:var(--text);background:var(--bg);line-height:1.5}
+    a{color:var(--accent);text-decoration:none}
+
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling */
+    }
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    section {
+      scroll-margin-top: 70px; /* Fix offset when clicking links */
+    }
   </style>
 </head>
 <body>
@@ -74,70 +126,85 @@ Usage notes:
         <a href="#program">Program</a>
         <a href="#speakers">Speakers</a>
         <a href="#venue">Venue</a>
-        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
 
-    <!-- HERO: replace images/header.jpg with your chosen top photo -->
+    <!-- HERO -->
     <header class="hero" role="banner">
-      <img src="images/header.jpg" alt="Workshop header image (replace images/header.jpg)">
+      <img src="images/header.jpg" alt="Workshop header image">
       <div class="hero-overlay">
         <h1 class="site-title">Compositionality and Reasoning in AI and Cognitive Science</h1>
-        <div class="site-sub">One‑day workshop — January 8, 2026 — Warsaw</div>
+        <div class="site-sub">Warsaw, January 8, 2026</div>
       </div>
     </header>
 
-    <!-- About + quick CTA -->
+    <!-- About -->
     <section id="about">
-      <div class="grid">
-        <div>
-          <h2>About the workshop</h2>
-          <p class="muted">This one‑day workshop brings together researchers in cognitive science and AI to discuss compositionality, structured representation, and symbolic reasoning in modern learning systems. We welcome contributions from theoretical, computational, and experimental perspectives.</p>
+      <h2>About the Workshop</h2>
+      <p class="muted">
+        This one‑day workshop aims to discuss compositionality, structured representation, and symbolic reasoning in modern learning systems.
+      </p>
 
-          <h3>Who should attend</h3>
-          <p class="muted">Researchers, PhD students, and practitioners interested in the intersection of compositionality, reasoning, and cognitive models of intelligence.</p>
-
-          <h3 id="program">Program (high level)</h3>
-          <ul>
-            <li><strong>09:00–09:30</strong> — Registration & coffee</li>
-            <li><strong>09:30–10:30</strong> — Opening keynote</li>
-            <li><strong>10:30–12:30</strong> — Talks & short presentations</li>
-            <li><strong>12:30–13:30</strong> — Lunch break</li>
-            <li><strong>13:30–15:30</strong> — Poster / demo session</li>
-            <li><strong>15:30–17:00</strong> — Panel discussion & closing</li>
-          </ul>
-
-          <h3 id="register">Registration</h3>
-          <p class="muted">Seats are limited. Please register using the form below (replace the link with your registration form):</p>
-          <p><a class="button" href="https://forms.gle/REPLACE_WITH_YOUR_FORM" target="_blank" rel="noopener">Register now</a></p>
-        </div>
-
-        <aside>
-          <section>
-            <h2 id="speakers">Speakers</h2>
-            <div class="speaker"><strong>Speaker A</strong><div class="muted">Affiliation — Title</div></div>
-            <div class="speaker"><strong>Speaker B</strong><div class="muted">Affiliation — Title</div></div>
-            <div class="speaker"><strong>Speaker C</strong><div class="muted">Affiliation — Title</div></div>
-            <p class="muted">(Replace these placeholders with confirmed speaker names and short bios.)</p>
-          </section>
-
-          <section style="margin-top:14px">
-            <h2 id="venue">Venue & travel</h2>
-            <p class="muted">Venue: <strong>TBD — Warsaw</strong><br>
-            Date: <strong>January 8, 2026</strong></p>
-            <p class="muted">Public transport and hotels are available across Warsaw. For international attendees, the nearest airport is Warsaw Chopin Airport (WAW).</p>
-          </section>
-        </aside>
-      </div>
+      <h3>Topics include:</h3>
+      <ul class="muted">
+        <li>
+          <strong>Hybrid Models for Natural Language Reasoning</strong><br>
+          Neural models have made remarkable strides, but their ability to generalize in logical reasoning remains limited.
+          Compositionality and recursiveness are distinct challenges: large language models perform well in the latter but struggle with the former.
+          This topic examines a hybrid neural-symbolic approach that merges efficiency with rigorous inference, offering a path toward more robust reasoning systems.
+        </li>
+        <li><strong>TBA</strong></li>
+      </ul>
     </section>
 
+    <!-- Program -->
+    <section id="program">
+      <h2>Program</h2>
+      <ul>
+        <li><strong>9:00–12:00</strong> — Talks & presentations (part 1)</li>
+        <li><strong>12:00–14:00</strong> — Lunch break</li>
+        <li><strong>14:00–17:00</strong> — Talks & presentations (part 2)</li>
+      </ul>
+    </section>
+
+    <!-- Speakers -->
+    <section id="speakers">
+      <h2>Invited Speakers</h2>
+
+      <div class="speaker">
+        <strong><a href="https://dieuwkehupkes.nl/" target="_blank" rel="noopener">Dieuwke Hupkes</a></strong>
+        <div class="muted">Meta AI Research — Title</div>
+      </div>
+      
+      <div class="speaker">
+        <strong><a href="https://personalpages.manchester.ac.uk/staff/ian.pratt/" target="_blank" rel="noopener">Ian Pratt-Hartmann</a></strong>
+      <div class="muted">University of Manchester — Title</div></div>      
+
+    </section>
+
+    <!-- Venue -->
+    <section id="venue">
+      <h2>Venue</h2>
+      <p class="muted">Venue: <strong>TBD — Warsaw</strong><br>
+      Date: <strong>January 8, 2026</strong></p>
+      <p class="muted">How to reach the venue.</p>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
-      <p class="muted">For questions about submissions, registration, or logistics please contact the organizers at <a href="mailto:organizers@example.com">organizers@example.com</a> (replace with the workshop contact).</p>
+      <p class="muted">
+        For questions about the workshop please contact:
+      </p>
+      <ul class="muted">
+        <li><a href="mailto:mmalicki@mimuw.edu.pl">Maciej Malicki</a> (University of Warsaw)</li>
+        <li><a href="mailto:jakub.szymanik@unitn.it">Jakub Szymanik</a> (University of Trento)</li>
+      </ul>
     </section>
 
     <footer>
-      &copy; 2025 Compositionality &amp; Reasoning Workshop — Organizers. Site template created for easy GitHub Pages deployment.
+      &copy; 2025 Compositionality &amp; Reasoning Workshop — University of Warsaw.
     </footer>
   </div>
 </body>
