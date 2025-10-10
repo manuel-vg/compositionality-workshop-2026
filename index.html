@@ -145,46 +145,49 @@
       <h2>About the Workshop</h2>
       <p class="muted">
         <div style="text-align: justify;">
-        In neural models, generalization is the ability to apply learned knowledge to new, unseen data. Compositionality is a principle that enables this generalization by allowing complex structures to be represented and processed as systematic combinations of simpler elements. Together, they are a key factor in bridging the gap between learning and genuine adaptability in AI.<br>        
-        This one‑day workshop aims to discuss compositionality, structured representation, and symbolic reasoning in modern learning systems.
+        In neural models, generalization is the ability to apply learned knowledge to new, unseen data. Compositionality is a principle that enables such generalization by allowing complex structures to be represented and processed as combinations of simpler elements, which provides a systematic way to interpret new structures. Together, they are a key factor in bridging the gap between learning and genuine adaptability in AI.<br>        
+        This one‑day workshop aims to discuss compositionality, structured representation, and the integration of neural and symbolic reasoning in modern learning systems..
         </div>
       </p>
 
       <h3>Our research:</h3>
       <p class="muted">
           <div style="text-align: justify;">
-          Neural models have made remarkable strides, but their ability to generalize in logical reasoning remains limited.
-          Compositionality and recursiveness are distinct challenges: large language models perform well in the latter but struggle with the former.
-          This topic examines a hybrid neural-symbolic approach that merges efficiency with rigorous inference, offering a path toward more robust reasoning systems.
+          Our work investigates hybrid models of reasoning, a neuro-symbolic approach to deductive inference that integrates neural learning with symbolic logic within restricted fragments of natural language. We began with a pilot study [1] on a simple propositional corpus to examine whether neural networks can assist a symbolic prover by selecting necessary formulas from a knowledge base to prove a given hypothesis. We then extended this work [2] to the syllogistic fragment, evaluating feedforward, recurrent, convolutional, and transformer architectures. Despite the simplicity of the experimental setup—training and testing on a single knowledge base with one-hot encoded inputs—our results indicated that models trained from scratch failed to capture the underlying logical structure. To validate and extend these findings, we next employed modern pretrained language models for formula selection in direct and indirect proofs, integrating neural assistants with a symbolic prover to evaluate their interaction within a hybrid reasoning framework [3]. In this phase, models were trained on multiple knowledge bases and tested on unseen ones, using pseudoword-based textual representations for both input and output.
           </div>
       </p>
     </section>
 
     <!-- Published Papers -->
     <section id="papers">
-      <h2>Published Papers</h2>
-      <p class="muted">Below is a selection of our recent work related to compositionality, reasoning, and generalization.</p>
-
+      <h2>Papers</h2>
       <ul style="list-style:none; padding-left:0;">
         <li style="margin-bottom:20px;">
-          <strong><a href="papers/paper1.pdf" target="_blank">Generalization and Compositionality in Neural Reasoning Systems</a></strong>
+          <strong><a href="https://hal.science/hal-03846838v1/document" target="_blank">[1] Compositionality in a simple corpus</a></strong>
           <details style="margin-top:6px;">
             <summary style="cursor:pointer; color:var(--accent);">Show Abstract</summary>
-            <p class="muted" style="margin-top:6px;">
-              This study investigates how neural and hybrid models generalize logical reasoning, focusing on compositionality and recursiveness. 
-              Using tests based on syllogistic logic, we analyze feed-forward, recurrent, convolutional, and transformer architectures, showing that 
-              while models capture basic aspects of logical terms, their ability to generalize reasoning remains limited.
+            <p class="muted" style="margin-top:6px; text-align: justify;">
+              We investigate the capacity of neural networks (NNs) to learn compositional structures by focusing on a well-defined simple logical corpus, and on proof-centered compositionality. We conduct our investigation in a minimal setting by creating a simple logical corpus, where all compositionality-related phenomena come from the structure of proofs as all the sentences of the corpus are propositional logic implications. By training NNs on this corpus we test different aspects of compositionality, through variations of proof lengths and permutations of the constants.
             </p>
           </details>
         </li>
 
         <li style="margin-bottom:20px;">
-          <strong><a href="papers/paper2.pdf" target="_blank">Hybrid Neural-Symbolic Approaches to Logical Inference</a></strong>
+          <strong><a href="https://aclanthology.org/2024.findings-naacl.147.pdf" target="_blank">[2] Testing the limits of logical reasoning in neural and hybrid models</a></strong>
           <details style="margin-top:6px;">
             <summary style="cursor:pointer; color:var(--accent);">Show Abstract</summary>
-            <p class="muted" style="margin-top:6px;">
-              We explore hybrid architectures combining symbolic reasoning with neural representations to enhance interpretability 
-              and compositional generalization in logical tasks.
+            <p class="muted" style="margin-top:6px; text-align: justify;">
+              We study the ability of neural and hybrid models to generalize logical reasoning patterns. We created a series of tests for analyzing various aspects of generalization in the context of language and reasoning, focusing on compositionality and recursiveness. We used them to study the syllogistic logic in hybrid models, where the network assists in premise selection. We analyzed feed-forward, recurrent, convolutional, and transformer architectures. Our experiments demonstrate that even though the models can capture elementary aspects of the meaning of logical terms, they learn to generalize logical reasoning only to a limited degree.
+            </p>
+          </details>
+        </li>
+
+        <li style="margin-bottom:20px;">
+          <strong><a href="about:blank" target="_blank">[3] Hybrid Models for Natural Language Reasoning: The Case of Syllogistic Logic</a></strong>
+          <details style="margin-top:6px;">
+            <summary style="cursor:pointer; color:var(--accent);">Show Abstract</summary>
+            <p class="muted" style="margin-top:6px; text-align: justify;">
+              Despite the remarkable progress in neural models, their ability to generalize—a cornerstone for applications like logical reasoning—remains a critical challenge. We delineate two fundamental aspects of this ability: compositionality, the capacity to abstract atomic logical rules underlying complex inferences, and recursiveness, the aptitude to build intricate representations through iterative application of inference rules. In the literature, these two aspects are often confounded together under the umbrella term of generalization. To sharpen this distinction, we investigated the logical generalization capabilities of pre-trained large language models (LLMs) using the syllogistic fragment as a benchmark for natural language reasoning. Though simple, this fragment provides a foundational yet expressive subset of formal logic that supports controlled evaluation of essential reasoning abilities. Our findings reveal a significant disparity: while LLMs demonstrate reasonable proficiency in recursiveness, they struggle with compositionality. To overcome these limitations and establish a reliable logical prover, we propose a hybrid architecture integrating symbolic reasoning with neural computation. This synergistic interaction enables robust and efficient inference—neural components accelerate processing, while symbolic reasoning ensures completeness. Our experiments show that high efficiency is preserved even with relatively small neural components. As part of our proposed methodology, this analysis gives a rationale and highlights the potential of hybrid models to effectively address key generalization barriers in neural reasoning systems.
             </p>
           </details>
         </li>
