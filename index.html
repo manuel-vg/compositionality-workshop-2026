@@ -87,12 +87,38 @@
     ul{padding-left:1.1em}
     .speaker{margin-bottom:10px}
 
-    footer{
-      margin-top:18px;
-      text-align:center;
-      padding:18px;
-      color:var(--muted);
-      font-size:13px;
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(19, 30, 43, 0.04);
+    }
+
+    /* Logo container styling */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Individual logos */
+    .logo-container img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    /* Optional hover effect */
+    .logo-container img:hover {
+      transform: scale(1.05);
     }
 
     :root{
@@ -153,7 +179,8 @@
       <h3>Our research:</h3>
       <p class="muted">
           <div style="text-align: justify;">
-          Our work investigates hybrid models of reasoning, a neuro-symbolic approach to deductive inference that integrates neural learning with symbolic logic within restricted fragments of natural language. We began with a pilot study [1] on a simple propositional corpus to examine whether neural networks can assist a symbolic prover by selecting necessary formulas from a knowledge base to prove a given hypothesis. We then extended this work [2] to the syllogistic fragment, evaluating feedforward, recurrent, convolutional, and transformer architectures. Despite the simplicity of the experimental setup—training and testing on a single knowledge base with one-hot encoded inputs—our results indicated that models trained from scratch failed to capture the underlying logical structure. To validate and extend these findings, we next employed modern pretrained language models for formula selection in direct and indirect proofs, integrating neural assistants with a symbolic prover to evaluate their interaction within a hybrid reasoning framework [3]. In this phase, models were trained on multiple knowledge bases and tested on unseen ones, using pseudoword-based textual representations for both input and output.
+          Our work investigates hybrid models of reasoning, a neuro-symbolic approach to deductive inference that integrates neural learning with symbolic logic within restricted fragments of natural language. We began with a pilot study [1] on a simple propositional corpus to examine whether neural networks can assist a symbolic prover by selecting necessary formulas from a knowledge base to prove a given hypothesis. We then extended this work [2] to the syllogistic fragment, evaluating feedforward, recurrent, convolutional, and transformer architectures. Despite the simplicity of the experimental setup—training and testing on a single knowledge base with one-hot encoded inputs—our results indicated that models trained from scratch failed to capture the underlying logical structure. To validate and extend these findings, we next employed modern pretrained language models for formula selection in direct and indirect proofs, integrating neural assistants with a symbolic prover to evaluate their interaction within a hybrid reasoning framework [3]. In this phase, models were trained on multiple knowledge bases and tested on unseen ones, using pseudoword-based textual representations for both input and output.<br><br>
+          Compositionality is a fundamental component of reasoning and continues to challenge neural models. Our results suggest that hybrid architectures integrating symbolic inference with neural learning offer a promising path toward overcoming these limitations and, more broadly, a compelling direction for future exploration—shedding light on how structured reasoning can emerge from statistical learning systems in AI.
           </div>
       </p>
     </section>
@@ -239,8 +266,17 @@
       </ul>
     </section>
 
+    <!-- Footer Section -->
     <footer>
-      &copy; 2025 Compositionality &amp; Reasoning Workshop — University of Warsaw.
+      <div class="logo-container">
+        <a href="https://www.uw.edu.pl/" target="_blank" rel="noopener">
+          <img src="images/uw_logo.png" alt="University of Warsaw Logo">
+        </a>
+        <a href="https://www.unitn.it/" target="_blank" rel="noopener">
+          <img src="images/ut_logo.jpg" alt="University of Trento Logo">
+        </a>
+      </div>
+      <p>&copy; 2025 Compositionality &amp; Reasoning Workshop — University of Warsaw.</p>
     </footer>
   </div>
 </body>
