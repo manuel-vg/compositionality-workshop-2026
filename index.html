@@ -172,15 +172,16 @@
       <p class="muted">
         <div style="text-align: justify;">
         In neural models, generalization is the ability to apply learned knowledge to new, unseen data. Compositionality is a principle that enables such generalization by allowing complex structures to be represented and processed as combinations of simpler elements, which provides a systematic way to interpret new structures. Together, they are a key factor in bridging the gap between learning and genuine adaptability in AI.<br>        
-        This one‑day workshop aims to discuss compositionality, structured representation, and the integration of neural and symbolic reasoning in modern learning systems..
+        This one‑day workshop aims to discuss compositionality, structured representation, and the integration of neural and symbolic reasoning in modern learning systems.
         </div>
       </p>
 
       <h3>Our research:</h3>
       <p class="muted">
           <div style="text-align: justify;">
-          Our work investigates hybrid models of reasoning, a neuro-symbolic approach to deductive inference that integrates neural learning with symbolic logic within restricted fragments of natural language. We began with a pilot study [1] on a simple propositional corpus to examine whether neural networks can assist a symbolic prover by selecting necessary formulas from a knowledge base to prove a given hypothesis. We then extended this work [2] to the syllogistic fragment, evaluating feedforward, recurrent, convolutional, and transformer architectures. Despite the simplicity of the experimental setup—training and testing on a single knowledge base with one-hot encoded inputs—our results indicated that models trained from scratch failed to capture the underlying logical structure. To validate and extend these findings, we next employed modern pretrained language models for formula selection in direct and indirect proofs, integrating neural assistants with a symbolic prover to evaluate their interaction within a hybrid reasoning framework [3]. In this phase, models were trained on multiple knowledge bases and tested on unseen ones, using pseudoword-based textual representations for both input and output.<br><br>
-          Compositionality is a fundamental component of reasoning and continues to challenge neural models. Our results suggest that hybrid architectures integrating symbolic inference with neural learning offer a promising path toward overcoming these limitations and, more broadly, a compelling direction for future exploration—shedding light on how structured reasoning can emerge from statistical learning systems in AI.
+          Our work investigates hybrid models of reasoning, a neuro-symbolic approach to deductive inference that integrates neural learning with symbolic logic within restricted fragments of natural language. We began with a pilot study [1] on a simple propositional corpus to examine whether neural networks can assist a symbolic prover by selecting necessary formulas from a knowledge base to prove a given hypothesis. We then extended this work [2] to the syllogistic fragment, evaluating feedforward, recurrent, convolutional, and transformer architectures. Despite the simplicity of the experimental setup—training and testing on a single knowledge base with one-hot encoded inputs—our results indicated that models trained from scratch failed to capture the underlying logical structure. To validate and extend these findings, we next employed modern pretrained language models for formula selection in direct and indirect proofs, integrating neural assistants with a symbolic prover to evaluate their interaction within a hybrid reasoning framework [3]. In this phase, models were trained on multiple knowledge bases and tested on unseen ones, using pseudoword-based textual representations for both input and output.
+          To further investigate the compositionality limitation in neural models, and in collaboration with researchers from the University of Trento, we explored a meta-learning approach on our syllogistic corpus [4] to study how models adapt to novel reasoning patterns in the formula selection task.<br><br>
+          Compositionality is a fundamental component of reasoning and continues to challenge neural models. Our results suggest that hybrid architectures integrating symbolic inference with neural learning offer a promising path toward overcoming these limitations and, more broadly, a compelling direction for future exploration—shedding light on how structured reasoning can emerge from pattern-based learning systems in AI.
           </div>
       </p>
     </section>
@@ -218,6 +219,17 @@
             </p>
           </details>
         </li>
+
+        <li style="margin-bottom:20px;">
+          <strong><a href="https://arxiv.org/pdf/2505.14313" target="_blank">[4] Teaching Small Language Models to Learn Logic through Meta-Learning</a></strong>
+          <details style="margin-top:6px;">
+            <summary style="cursor:pointer; color:var(--accent);">Show Abstract</summary>
+            <p class="muted" style="margin-top:6px; text-align: justify;">
+              Large language models (LLMs) are increasingly evaluated on reasoning tasks, yet their logical abilities remain contested. To address this, we study LLMs' reasoning in a well-defined fragment of logic: syllogistic reasoning. We cast the problem as premise selection and construct controlled datasets to isolate logical competence. Beyond evaluation, an open challenge is enabling LLMs to acquire abstract inference patterns that generalize to novel structures. We propose to apply few-shot meta-learning to this domain, thereby encouraging models to extract rules across tasks rather than memorize patterns within tasks. Although meta-learning has been little explored in the context of logic learnability, our experiments show that it is effective: small models (1.5B-7B) fine-tuned with meta-learning demonstrate strong gains in generalization, with especially pronounced benefits in low-data regimes. These meta-learned models outperform GPT-4o and o3-mini on our syllogistic reasoning task. 
+            </p>
+          </details>
+        </li>
+
       </ul>
     </section>
 
