@@ -98,6 +98,40 @@
       box-shadow: 0 6px 18px rgba(19, 30, 43, 0.04);
     }
 
+    /* Program */
+    .program-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .program-time {
+      color: var(--muted);
+      font-weight: normal;
+    }
+
+    .program-desc strong {
+      font-weight: 600;
+    }
+
+    .program-desc em {
+      font-style: italic;
+    }
+
+    /* make it tighter on phones */
+    @media (max-width: 480px) {
+      .program-item {
+        grid-template-columns: 90px 1fr;
+      }
+    }
+
     /* Logo container styling */
     .logo-container {
       display: flex;
@@ -239,10 +273,62 @@
     <!-- Program -->
     <section id="program">
       <h2>Program</h2>
-      <ul>
-        <li><strong>9:00–12:00</strong> — Talks & presentations (part 1)</li>
-        <li><strong>12:00–14:00</strong> — Lunch break</li>
-        <li><strong>14:00–17:00</strong> — Talks & presentations (part 2)</li>
+      <ul class="program-list">
+        <li class="program-item">
+          <div class="program-time">9:00–9:40</div>
+          <div class="program-desc"><strong>Dieuwke Hupkes</strong> — <em>TBA</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">9:50–10:10</div>
+          <div class="program-desc"><em>Coffee break</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">10:20–11:00</div>
+          <div class="program-desc"><strong>Marcin Miłkowski</strong> — <em>Composing Moves: How Procedural Memory Builds Novel Action</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">11:10–11:40</div>
+          <div class="program-desc"><strong>Manuel Vargas Guzmán</strong> — <em>TBA</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">11:50–12:20</div>
+          <div class="program-desc"><strong>Leonardo Bertolazzi</strong> — <em>TBA</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">12:20–14:00</div>
+          <div class="program-desc"><em>Lunch break</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">14:00–14:40</div>
+          <div class="program-desc"><strong>Ian Pratt-Hartmann</strong> — <em>Natural Language Inference: from Aristotle to AI</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">14:50–15:30</div>
+          <div class="program-desc"><strong>Andrea de Varda</strong> — <em>Behavioral and structural signatures of human-like reasoning in LLMs</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">15:30–15:50</div>
+          <div class="program-desc"><em>Coffee break</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">15:50–16:30</div>
+          <div class="program-desc"><strong>Justyna Grudzińska-Zawadowska</strong> — <em>TBA</em></div>
+        </li>
+
+        <li class="program-item">
+          <div class="program-time">16:40–17:20</div>
+          <div class="program-desc"><strong>Discussion</strong></div>
+        </li>
+
       </ul>
     </section>
 
@@ -252,32 +338,87 @@
 
       <div class="speaker">
         <strong><a href="https://dieuwkehupkes.nl/" target="_blank" rel="noopener">Dieuwke Hupkes</a></strong>
-        <div class="muted">Meta AI Research</div>
+        (<span class="muted">Meta AI Research</span>)
+        <p class="muted" style="margin-top:6px; text-align: justify;">            
+          <em>TBA</em>
+        </p>
       </div>
       
       <div class="speaker">
         <strong><a href="https://personalpages.manchester.ac.uk/staff/ian.pratt/" target="_blank" rel="noopener">Ian Pratt-Hartmann</a></strong>
-      <div class="muted">University of Manchester &amp; University of Opole</div></div>      
+        (<span class="muted">University of Manchester &amp; University of Opole</span>)
+        <div><strong>Natural Language Inference: from Aristotle to AI</strong></div>
+        <!-- <details style="margin-top:6px;">
+          <summary style="cursor:pointer; color:var(--accent); font-size:0.9rem;">Show abstract</summary> -->
+        <p class="muted" style="margin-top:6px; text-align: justify;">            
+          <em>For most of recorded history, logic was seen as an attempt to
+            systematize the entailment patterns observed in natural—that is to
+            say, human—languages. Only with the rise of quantification theory
+            and the emergence of mathematical logic at the end of the nineteenth
+            century did the syntactic structure of natural language lose its
+            pre-eminence. Recently, however, there has been a resurgence of
+            interest in natural language reasoning, as a result of two very
+            different developments. The first is the discovery of a rich,
+            complexity-theoretic landscape among fragments of natural languages
+            defined by the syntactic devices they feature: quantifying
+            determiners, relative clauses, ditransitive verb, passive
+            constructions, anaphora, and so on. The second is the recent rise of
+            transformer-based language models, which can be fine-tuned to solve a
+            range of natural language inference tasks. In this talk I combine both
+            these strands of research to direct the spotlight back on logical
+            systems based on natural, rather than, formal, languages. As I shall
+            argue, the study of such systems opens up new avenues of logical
+            research.
+          </em>
+        </p>
+        </details>
+      </div>      
 
       <div class="speaker">
         <strong><a href="https://andrea-de-varda.github.io" target="_blank" rel="noopener">Andrea de Varda</a></strong>
-      <div class="muted">MIT</div></div>
+        (<span class="muted">MIT</span>)
+        <div><strong>Behavioral and structural signatures of human-like reasoning in LLMs</strong></div>
+        <p class="muted" style="margin-top:6px; text-align: justify;">            
+          <em>What does it mean for a model to reason in a human-like way? A core signature of cognitive effort in psychology is reaction time: harder problems take longer because they require more intermediate steps. We show that large reasoning models capture this cost of thinking. Across seven reasoning domains, the length of a model's chain of thought predicts human reaction times, tracking both item-level difficulty and broader task-level demands. This alignment is robust across models and is substantially stronger for reasoning models than for base LLMs.
+
+          Motivated by this correspondence in behavior, we ask whether similarities between humans and models extend to the internal organization of their reasoning systems. Intelligent behavior in humans is supported by a set of specialized brain networks that segregate language processing, domain-general reasoning, social reasoning, and intuitive physics. Drawing inspiration from neuroscience, we used task-based functional localization in LLMs to identify units that selectively respond to tasks in each of these domains. We found that the units' selectivity profiles exhibit the same within-domain overlap and across-domain separability observed in the human brain.
+
+          Together, these findings show that LLMs and their reasoning-optimized variants not only mirror patterns of cognitive effort but also develop emergent functional structure reminiscent of the modular architecture supporting human thought.</em>
+        </p>
+      </div>
 
       <div class="speaker">
         <strong><a href="https://marcinmilkowski.pl" target="_blank" rel="noopener">Marcin Miłkowski</a></strong>
-      <div class="muted">Polish Academy of Sciences</div></div>
+        (<span class="muted">Polish Academy of Sciences</span>)
+        <div><strong>Composing Moves: How Procedural Memory Builds Novel Action</strong></div>
+        <p class="muted" style="margin-top:6px; text-align: justify;">           
+          <em>Compositionality is fundamental to both human and artificial cognition, yet theories of procedural memory often underestimate its representational demands. This presentation argues that any adequate account of skilled action must satisfy three conceptual desiderata rooted in compositionality: method-specific directivity (disambiguating kinematically equivalent execution paths), hierarchical sequencing (implementing conditional branching and nested timing), and dual error evaluation (distinguishing execution noise from content mismatch). Empirical patterns from apraxia research—where patients execute isolated movements but cannot combine them into novel tool-use sequences or meaningless gestures—reveal compositionality as a distinct theoretical requirement, not a product of associative learning. The analysis demonstrates that anti-representationalist appeals to "smooth coping" or affordance-responsiveness evade these constraints by masking the necessary representational architecture. Action guidance requires hybrid concepts merging descriptive properties with directive force; otherwise, the interface between linguistic instruction and motor execution remains unexplained. By articulating the minimal conceptual requirements for procedural memory, this framework compels both embodied cognition and artificial intelligence research to confront the compositional logic of action, precluding theoretical shortcuts and establishing a foundation for genuine practical rationality in biological and artificial agents.</em>
+        </p>
+      </div>
 
       <div class="speaker">
         <strong><a href="https://sites.google.com/view/justyna-grudzinska/research?authuser=0" target="_blank" rel="noopener">Justyna Grudzińska-Zawadowska</a></strong>
-      <div class="muted">University of Warsaw</div></div>
+        (<span class="muted">University of Warsaw</span>)
+        <p class="muted" style="margin-top:6px; text-align: justify;">            
+          <em>TBA</em>
+        </p>
+      </div>
 
       <div class="speaker">
         <strong>Leonardo Bertolazzi</strong>
-      <div class="muted">University of Trento</div></div>
+        (<span class="muted">University of Trento</span>)
+        <p class="muted" style="margin-top:6px; text-align: justify;">            
+          <em>TBA</em>
+        </p>
+      </div>
 
       <div class="speaker">
         <strong>Manuel Vargas Guzmán</strong>
-      <div class="muted">University of Warsaw</div></div>            
+        (<span class="muted">University of Warsaw</span>)
+        <p class="muted" style="margin-top:6px; text-align: justify;">            
+          <em>TBA</em>
+        </p>
+      </div>            
     </section>
 
     <!-- Venue 
