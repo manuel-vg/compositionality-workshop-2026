@@ -328,7 +328,8 @@
         <li class="program-item">
           <div class="program-time">15:50–16:30</div>
           <div class="program-desc"><strong><a href="https://sites.google.com/view/justyna-grudzinska/research?authuser=0" target="_blank" rel="noopener">Justyna Grudzińska-Zawadowska</a></strong> 
-            (University of Warsaw) <br> <em>TBA</em>
+            (University of Warsaw) <br> 
+            <em>Disentangling Form and World Knowledge in LLM Interpretation: Evidence from Quantifier Scope Disambiguation</em>
           </div>
         </li>
 
@@ -407,8 +408,11 @@
       <div class="speaker">
         <strong><a href="https://sites.google.com/view/justyna-grudzinska/research?authuser=0" target="_blank" rel="noopener">Justyna Grudzińska-Zawadowska</a></strong>
         (<span class="muted">University of Warsaw</span>)
+        <div><strong>Disentangling Form and World Knowledge in LLM Interpretation: Evidence from Quantifier Scope Disambiguation</strong></div>        
         <p class="muted" style="margin-top:6px; text-align: justify;">            
-          <em>TBA</em>
+          <em>This talk summarizes a series of studies that use Quantifier Scope Disambiguation (QSD) as a probing task for understanding how LLMs construct meaning. The central question motivating this work is how to design an approach that effectively incorporates world knowledge into QSD, and more broadly, how LLMs balance linguistic form with background knowledge when selecting an interpretation.
+
+          Across several projects, we first developed corpora that minimize the influence of surface-level cues. For Polish, a scope-annotated corpus was constructed and carefully balanced for linear order, quantifier type, and grammatical role. For English, we created an analogous balanced dataset by combining corpus-based materials with generated and hand-designed examples. In parallel, we conducted an experiment using entirely invented sentences with no real-world referents; this setting forces LLMs to rely solely on formal cues, allowing us to measure how much of their QSD performance depends on stored world knowledge versus structural patterns. Together, these resources allow us to treat QSD as a controlled interpretation probe. We then compared PLMs (HerBERT, RoBERTa) and full-scale LLMs (GPT-4o, Qwen2.5) with systems enriched with external knowledge, including dynamic RAG models that draw on ConceptNet and Simple Wikipedia. The results show that baseline models already rely on implicit world knowledge to achieve high accuracy on balanced datasets, while models with on-demand retrieval perform even better. I conclude by arguing that LLMs exhibit a form of world-knowledge-supported compositionality: their scope assignments arise not from surface heuristics alone, but from the interaction between broad background expectations about how situations typically unfold and the interpretive pressures encoded in the input.</em>
         </p>
       </div>
 
